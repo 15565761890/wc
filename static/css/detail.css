@@ -1,0 +1,183 @@
+#content_1 {
+	margin-bottom: 53px;
+}
+
+#content_1 .topImg {
+	height: 280px;
+	width: 100%;
+}
+
+#content_1 .topImg img {
+	width: 100%;
+	height: 100%;
+}
+
+#content_1 .container .labelSmall .labelSmall-left {
+	width: 65%;
+	float: left;
+}
+
+#content_1 .container .labelSmall .labelSmall-left p {
+	font-size: 12px;
+}
+
+#content_1 .container .labelSmall .labelSmall-left span {
+	font-size: 10px;
+	color: #CCCCCC;
+}
+
+#content_1 .container .labelSmall .labelSmall-left .totalSpan {
+	border-right: 1px solid #CCCCCC;
+	padding-right: 5px;
+}
+
+#content_1 .container .labelSmall .labelSmall-right {
+	width: 35%;
+	float: left;
+	text-align: right;
+}
+
+#content_1 .container .labelSmall .labelSmall-right p.glyphicon {
+	font-size: 28px;
+	color: #1ac71a;
+	margin-top: 20px;
+}
+
+#content_1 .container .labelSmall .labelSmall-right p.labelSmall-right-text {
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+#content_1 .container .contentNav {
+	margin-top: 20px;
+	border-top: 5px solid #C0C0C0;
+	text-align: center;
+	border-bottom: 2px solid #C0C0C0;
+}
+
+#content_1 .container .contentNav a {
+	color: #000000;
+	text-decoration: none;
+}
+
+#content_1 .container .contentNav span {
+	display: block;
+	width: 70%;
+	margin: auto;
+	font-size: 19px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#content_1 .container .tab-content .tab-pane .contentImg {
+	height: 300px;
+	margin-bottom: 53px;
+}
+
+#content_1 .container .tab-content .tab-pane .contentImg img {
+	width: 100%;
+	height: 100%;
+}
+#content_1 .container .tab-content .tab-pane .contentIndex{
+	margin-bottom: 53px;
+}
+/*底部*/
+
+#footer .foot {
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #f7f6fb;
+	height: 53px;
+}
+
+#footer .foot .footer-button {
+	background-color: #1AC71A;
+	width: 75%;
+	height: 75%;
+	border-radius: 5px;
+	overflow: hidden;
+	color: #FFFFFF;
+	text-align: center;
+	margin: auto;
+	margin-top: 5px;
+}
+
+#footer .foot .footer-button span {
+	line-height: 40px;
+}
+#content_1p {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#content_1p .content-content a {
+	color: #000000;
+}
+
+#content_1p .content-content .content-img {
+	float: left;
+	width: 20%;
+	overflow: hidden;
+	height: 50px;
+	border-radius: 2px;
+}
+
+#content_1p .content-content .content-img img {
+	width: 100%;
+	height: 100%;
+}
+
+#content_1p .content-content .content-text {
+	float: left;
+	width: 60%;
+	padding-left: 15px;
+}
+
+#content_1p .container .content-content .content-text h4 {
+	font-size: 14px;
+}
+
+#content_1p .container .content-content .content-text p {
+	display: block;
+	word-break: keep-all;
+	/* 不换行 */
+	white-space: nowrap;
+	/* 不换行 */
+	overflow: hidden;
+	/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow: ellipsis;
+	/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+#content_1p .container .content-content .content-text .total {
+	float: left;
+	padding-right: 5px;
+	border-right: 1px solid #CCCCCC;
+}
+
+#content_1p .container .content-content .content-text .number {
+	float: left;
+	margin-left: 5px;
+}
+
+#content_1p .container .content-content .content-button {
+	float: left;
+	width: 20%;
+}
+
+#content_1p .container .content-content .content-button span {
+	display: block;
+	text-align: center;
+	background-color: #1ac71a;
+	height: 24px;
+	width: 54px;
+	line-height: 24px;
+	border-radius: 3px;
+	color: #FFFFFF;
+	margin-top: 12px;
+	margin-left: 10px;
+}

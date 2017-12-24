@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/ch-ui.admin.css">
+	<link rel="stylesheet" href="../css/font/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../lib/jqurey/jquery.js"></script>
+    <script type="text/javascript" src="../css/js/ch-ui.admin.js"></script>
+    <script type="text/javascript" src="../js/adminMain.js"></script>
+    <script type="text/javascript" src="../js/wangEditor.min.js"></script> 
+    <script type="text/javascript" src="../js/My97DatePickerBeta/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/control/config.js"></script>
+    <script type="text/javascript" src="../js/itemAll.js"></script>
+</head>
+<body id="body">
+    <!--面包屑导航 开始-->
+    <div class="crumb_warp">
+        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
+        <i class="fa fa-home"></i> 
+        <a href="../index.html">首页</a> &raquo; 
+        <a href="#">知识商品</a> &raquo; 
+        <a href="item.html">单品</a>&raquo;<span id="spTitle">视频添加</span>
+    </div>
+    <!--面包屑导航 结束-->
+	<div class="result_wrap">
+        <table class="add_tab" >
+            <tbody>
+                <tr>
+                    <th><i class="require">*</i>音频名称：</th>
+                    <td>
+                        <input type="hidden" id="idSp"/>
+                        <input type="text" class="lg" id="SpName">
+                        <p>标题可以写30个字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="require">*</i>视频上传：</th>
+                    <td>
+                        <input id="uploadSpUrl1" type="hidden"/>
+                        <input id="uploadSp1" type="file" name="file"><!--
+                        <span><i class="fa fa-exclamation-circle yellow"></i>这里是默认长度</span>-->
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="require">*</i>视频封面：</th>
+                    <td>
+                        <input id="uploadSpUrl2" type="hidden"/>
+                        <input id="uploadSp2" type="file" name="file"><!--
+                        <span><i class="fa fa-exclamation-circle yellow"></i>这里是默认长度</span>-->
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="require">*</i>视频贴片：</th>
+                    <td>
+                        <input id="uploadSpUrl3" type="hidden"/>
+                        <input id="uploadSp3" type="file" name="file"><!--
+                        <span><i class="fa fa-exclamation-circle yellow"></i>这里是默认长度</span>-->
+                    </td>
+                </tr>
+                <tr>
+                    <th>详细内容：</th>
+                    <td>
+                        <div id="editorSp"></div>
+                        <script type="text/javascript">
+                            var E = window.wangEditor;
+                            var editorSp = new E('#editorSp');
+                            editorSp.customConfig.uploadImgShowBase64 = true   // 使用 base64 保存图片
+                            // 下面两个配置，使用其中一个即可显示“上传图片”的tab。但是两者不要同时使用！！！
+                            editorSp.create();
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <th>付费形式：</th>
+                    <td>
+                        <div>
+                        <label><input type="radio" name="priceSp" value="2">付费:  <input type="text" id="priceTextSp"/> </label></div>
+                        <label><input type="radio" name="priceSp" value="1" onchange="document.getElementById('priceTextSp').value=''">免费:  </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>所属分类：</th>
+                    <td>
+                        <label><input type="checkbox" name="feileiSp" value="1">直播讲堂</label>
+                        <label><input type="checkbox" name="feileiSp" value="2">淘系课程</label>
+                        <label><input type="checkbox" name="feileiSp" value="3">社群营销</label>
+                        <label><input type="checkbox" name="feileiSp" value="4">腾骏会员</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>是否上架：</th>
+                    <td>
+                            <label><input type="radio" name="stateSp" value="1">上架:</label>
+                            <label><input type="radio" name="stateSp" value="2">不上架:</label>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th></th>
+                    <td>
+                        <input type="submit" value="提交" onclick="submitSp()" >
+                        <input type="button" class="back" onclick="history.go(-1)" value="返回">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<script type="text/javascript">
+        $(function() {
+            initItemDetailSp();
+        });
+    </script>
+</body>
+</html>

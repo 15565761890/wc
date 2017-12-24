@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/ch-ui.admin.css">
+	<link rel="stylesheet" href="../css/font/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../lib/jqurey/jquery.js"></script>
+    <script type="text/javascript" src="../css/js/ch-ui.admin.js"></script>
+    <script type="text/javascript" src="../js/adminMain.js"></script>
+    <script type="text/javascript" src="../js/wangEditor.min.js"></script> 
+    <script type="text/javascript" src="../js/My97DatePickerBeta/WdatePicker.js"></script>
+</head>
+<body id="body">
+    <!--面包屑导航 开始-->
+    <div class="crumb_warp">
+        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
+        <i class="fa fa-home"></i> 
+        <a href="../index.html">首页</a> &raquo; 
+        <a href="#">知识商品</a> &raquo; 
+        <a href="member.html">会员</a>&raquo; 会员添加
+    </div>
+    <!--面包屑导航 结束-->
+	<div class="result_wrap">
+        <form action="#" method="post">
+            <table class="add_tab" >
+                <tbody>
+                    <tr>
+                        <th><i class="require">*</i>直播名称：</th>
+                        <td>
+                            <input type="text" class="lg" name="">
+                            <p>标题可以写30个字</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><i class="require">*</i>音频上传：</th>
+                        <td>
+                            <input type="file" name=""><!--
+                            <span><i class="fa fa-exclamation-circle yellow"></i>这里是默认长度</span>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><i class="require">*</i>音频封面：</th>
+                        <td>
+                            <input type="file" name=""><!--
+                            <span><i class="fa fa-exclamation-circle yellow"></i>这里是默认长度</span>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>详细内容：</th>
+                        <td>
+                        	<div id="editor"></div>
+                        	<script type="text/javascript">
+						    	var E = window.wangEditor;
+						    	var editor = new E('#editor');
+						    	editor.customConfig.uploadImgShowBase64 = true   // 使用 base64 保存图片
+						    	// 下面两个配置，使用其中一个即可显示“上传图片”的tab。但是两者不要同时使用！！！
+						    	editor.create();
+  							</script><!--
+                            <textarea class="lg" name="content"></textarea>
+                            <p>标题可以写30个字</p>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><i class="require">*</i>上传试听：</th>
+                        <td><input type="file" name=""></td>
+                    </tr>
+                    
+                    <tr>
+                        <th>单选框：</th>
+                        <td>
+                        	<div>
+                            <label for=""><input type="radio" name="price" id="price" value="">付费:  <input type="text" id="priceText" onchange="document.getElementById('price').value()=document.getElementById('priceText').value()"/> </label></div>
+                            <label for="" style=""><input type="radio" name="price" value="0">免费:  </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>所属分类：</th>
+                        <td>
+                            <label for=""><input type="checkbox" name="">直播讲堂</label>
+                            <label for=""><input type="checkbox" name="">淘系课程</label>
+                            <label for=""><input type="checkbox" name="">社群营销</label>
+                            <label for=""><input type="checkbox" name="">腾骏会员</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>上架时间：</th>
+                        <td>
+                            <input onfocus="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd'})" type="text" class="sm" name="">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input type="submit" value="提交">
+                            <input type="button" class="back" onclick="history.go(-1)" value="返回">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+	
+</body>
+</html>

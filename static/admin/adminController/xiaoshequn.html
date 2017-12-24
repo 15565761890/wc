@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/ch-ui.admin.css">
+		<link rel="stylesheet" href="../css/font/css/font-awesome.min.css">
+		<script type="text/javascript" src="../../lib/jqurey/jquery.js"></script>
+		<script type="text/javascript" src="../css/js/ch-ui.admin.js"></script>
+		<script type="text/javascript" src="../js/adminMain.js"></script>
+	    <script type="text/javascript">
+	    	//按钮选择添加文章类型
+			function callParents(type) {
+				parent.replaceItemDetail('./adminController/xiaoshequnDetail.html');
+			}
+    	</script>
+		<title></title>
+	</head>
+	<body>
+		<!--面包屑导航 开始-->
+	    <div class="crumb_warp">
+	        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
+	        <i class="fa fa-home"></i>  <a href="#">首页</a> &raquo; <a href="#">社群运营</a> &raquo; 小社群
+	    </div>
+	    <!--面包屑导航 结束-->
+	
+		<!--结果页快捷搜索框 开始-->
+		<div class="search_wrap">
+	        <form action="" method="post">
+	            <table class="search_tab">
+	                <tr>
+	                    <th width="120">选择分类:</th>
+	                    <td>
+	                        <select onchange="javascript:location.href=this.value;">
+	                            <option value="">全部</option>
+	                            <option value="1">已上架</option>
+	                            <option value="0">未上架</option>
+	                        </select>
+	                    </td>
+	                    <th width="70">关键字:</th>
+	                    <td><input type="text" name="keywords" placeholder="关键字"></td>
+	                    <td><input type="submit" name="sub" value="查询"></td>
+	                </tr>
+	            </table>
+	        </form>
+	    </div>
+	    <!--结果页快捷搜索框 结束-->
+	
+	    <!--搜索结果页面 列表 开始-->
+	    <form action="#" method="post">
+	        <div class="result_wrap">
+	            <!--快捷导航 开始-->
+	            <div class="result_content">
+	                <div class="short_wrap">
+	                	<input type="button" value="新建社群" class="fa fa-plus" onclick="callParents()"/>
+	                </div>
+	            </div>
+	            <!--快捷导航 结束-->
+	        </div>
+	
+	        <div class="result_wrap">
+	            <div class="result_content">
+	                <table class="list_tab">
+	                    <tr>
+	                        <th class="tc">ID</th>
+	                        <th class="tc">单品名称</th>
+	                        <th>价格</th>
+	                        <th>评论数量</th>
+	                        <th>播放数量</th>
+	                        <th>完播量</th>
+	                        <th>分享量</th>
+	                        <th>试听数量</th>
+	                        <th>状态</th>
+	                        <th>操作</th>
+	                    </tr>
+	                    <tr>
+	                        <td class="tc">
+	                            <input type="text" name="ord[]" value="0">
+	                        </td>
+	                        <td class="tc">59</td>
+	                        <td>
+	                            <a href="#">金色 移动联通电信4G手机</a>
+	                        </td>
+	                        <td>0</td>
+	                        <td>2</td>
+	                        <td>admin</td>
+	                        <td>2014-03-15 21:11:01</td>
+	                        <td></td>
+	                        <td>已上架</td>
+	                        <td>
+	                            <a href="#">修改</a>
+	                            <a href="#">删除</a>
+	                            <a href="#">复制连接</a>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="tc">
+	                            <input type="text" name="ord[]" value="0">
+	                        </td>
+	                        <td class="tc">59</td>
+	                        <td>
+	                            <a href="#">金色 移动联通电信4G手机</a>
+	                        </td>
+	                        <td>0</td>
+	                        <td>2</td>
+	                        <td>admin</td>
+	                        <td>2014-03-15 21:11:01</td>
+	                        <td></td>
+	                        <td>已上架</td>
+	                        <td>
+	                            <a href="#">修改</a>
+	                            <a href="#">删除</a>
+	                            <a href="#">复制连接</a>
+	                        </td>
+	                    </tr>
+	                    
+	                </table>
+					<div class="page_nav">
+						<div>
+						<a class="first" href="/wysls/index.php/Admin/Tag/index/p/1.html">第一页</a> 
+						<a class="prev" href="/wysls/index.php/Admin/Tag/index/p/7.html">上一页</a> 
+						<a class="num" href="/wysls/index.php/Admin/Tag/index/p/6.html">6</a>
+						<a class="num" href="/wysls/index.php/Admin/Tag/index/p/7.html">7</a>
+						<span class="current">8</span>
+						<a class="num" href="/wysls/index.php/Admin/Tag/index/p/9.html">9</a>
+						<a class="num" href="/wysls/index.php/Admin/Tag/index/p/10.html">10</a> 
+						<a class="next" href="/wysls/index.php/Admin/Tag/index/p/9.html">下一页</a> 
+						<a class="end" href="/wysls/index.php/Admin/Tag/index/p/11.html">最后一页</a> 
+						<span class="rows">11 条记录</span>
+						</div>
+					</div>
+	            </div>
+	        </div>
+	    </form>
+	</body>
+</html>

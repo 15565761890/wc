@@ -1,0 +1,110 @@
+#content_1 {
+	margin-bottom: 53px;
+}
+
+#content_1 .topImg {
+	height: 280px;
+	width: 100%;
+}
+
+#content_1 .topImg img {
+	width: 100%;
+	height: 100%;
+}
+
+#content_1 .container .labelSmall .labelSmall-left {
+	width: 65%;
+	float: left;
+}
+
+#content_1 .container .labelSmall .labelSmall-left p {
+	font-size: 12px;
+}
+
+#content_1 .container .labelSmall .labelSmall-left span {
+	font-size: 10px;
+	color: #CCCCCC;
+}
+
+#content_1 .container .labelSmall .labelSmall-left .totalSpan {
+	border-right: 1px solid #CCCCCC;
+	padding-right: 5px;
+}
+
+#content_1 .container .labelSmall .labelSmall-right {
+	width: 35%;
+	float: left;
+	text-align: right;
+}
+
+#content_1 .container .labelSmall .labelSmall-right p.glyphicon {
+	font-size: 28px;
+	color: #1ac71a;
+	margin-top: 20px;
+}
+
+#content_1 .container .labelSmall .labelSmall-right p.labelSmall-right-text {
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+#content_1 .container .contentNav {
+	margin-top: 20px;
+	border-top: 5px solid #C0C0C0;
+	text-align: center;
+	border-bottom: 2px solid #C0C0C0;
+}
+
+#content_1 .container .contentNav a {
+	color: #000000;
+	text-decoration: none;
+}
+
+#content_1 .container .contentNav span {
+	display: block;
+	width: 70%;
+	margin: auto;
+	font-size: 19px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#content_1 .container .tab-content .tab-pane .contentImg {
+	height: 300px;
+	margin-bottom: 53px;
+}
+
+#content_1 .container .tab-content .tab-pane .contentImg img {
+	width: 100%;
+	height: 100%;
+}
+#content_1 .container .tab-content .tab-pane .contentIndex{
+	margin-bottom: 53px;
+}
+/*底部*/
+
+#footer .foot {
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #f7f6fb;
+	height: 53px;
+}
+
+#footer .foot .footer-button {
+	background-color: #1AC71A;
+	width: 75%;
+	height: 75%;
+	border-radius: 5px;
+	overflow: hidden;
+	color: #FFFFFF;
+	text-align: center;
+	margin: auto;
+	margin-top: 5px;
+}
+
+#footer .foot .footer-button span {
+	line-height: 40px;
+}

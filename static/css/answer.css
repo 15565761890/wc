@@ -1,0 +1,202 @@
+#answer {
+	height: 100%;
+	background-color: #FFFFFF;
+	max-width: 480px;
+	margin: auto;
+}
+
+#answer .container .tip {
+	height: 50px;
+	position: relative;
+}
+
+#answer .container .tip span {
+	display: block;
+	width: 80px;
+	height: 30px;
+	float: left;
+	text-align: center;
+	/*background-color: green;*/
+	color: green;
+	position: absolute;
+	border: 1px solid green;
+	top: 10px;
+	line-height: 30px;
+}
+/*#answer .container .tip span a{
+	color: green;
+	text-decoration: none;
+}*/
+
+#answer .container .tip span.answerLeft {
+	left: 50%;
+	margin-left: -80px;
+	border-radius: 2px 0 0 2px;
+}
+
+#answer .container .tip span.answerRight {
+	left: 50%;
+	border-radius: 0 2px 2px 0;
+}
+
+#answer .container .tip span.actived {
+	background: green;
+	color: #FFFFFF;
+}
+/*#answer .container .tip span.actived a{
+	color: #FFFFFF;
+	text-decoration: none;
+}*/
+#answer1 .answerContent {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+#answer1 .answerContent .answerContentImg {
+	float: left;
+	width: 15%;
+	height: 50px;
+	margin-top: 10px;
+}
+
+#answer1 .answerContent .answerContentImg img {
+	width: 100%;
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+}
+
+#answer1 .answerContent .answerContentText {
+	float: left;
+	width: 60%;
+	padding-left: 10px;
+}
+
+#answer1 .answerContent .answerContentText p {
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+#answer1 .answerContent .answerContentText h5 {
+	color: #000000;
+}
+
+#answer1 .answerContent .answerContentValue {
+	float: left;
+	width: 25%;
+}
+
+#answer1 .answerContent .answerContentValue span {
+	display: block;
+	width: 67px;
+	height: 25px;
+	border: 1px solid #09BB07;
+	color: #09BB07;
+	margin-top: 22px;
+	margin-left: 10px;
+	text-align: center;
+	line-height: 25px;
+	font-size: 12px;
+	border-radius: 2px;
+}
+#issue {}
+#issue .issueContent {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+#issue .issueContent .issueContentOne p {
+	padding: 15px 10px 0px 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	color: #000000;
+}
+
+#issue .issueContent .issueContentOne .issueBox {
+	padding: 10px 10px 0px 10px;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxImg {
+	float: left;
+	width: 10%;
+	height: 30px;
+	margin-right: 10px;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxImg img {
+	width: 30px;
+	height: 100%;
+	border-radius: 15px;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxText {
+	float: left;
+	height: 30px;
+	width: 60%;
+	background-color: #09BB07;
+	border-radius: 15px;
+	line-height: 30px;
+	color: #FFFFFF;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxText i {
+	font-style: normal;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxText .voice {
+	margin-left: 12px;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxText span {
+	margin-left: 10px;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxText .timeI {
+	float: right;
+	margin-right: 10px;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxRight {
+	width: 20%;
+	height: 30px;
+	float: right;
+	color: #CCCCCC;
+}
+
+#issue .issueContent .issueContentOne .issueBox .issueBoxRight span {
+	display: block;
+	margin-top: 6px;
+}
+
+#issue .issueContent .issueContentOne h5 {
+	padding-left: 10px;
+	margin-top: 20px;
+	color: #000000;
+}
+
+#issue .issueContent .issueContentOne .TextBottom {
+	padding: 0px 10px 0px 10px;
+}
+
+#issue .issueContent .issueContentOne .TextBottom span {
+	display: block;
+	font-size: 13px;
+	color: #CCCCCC;
+	float: left;
+}
+
+#issue .issueContent .issueContentOne .TextBottom span.TextBottomA {
+	padding-right: 5px;
+	border-right: 1px solid #CCCCCC;
+}
+
+#issue .issueContent .issueContentOne .TextBottom span.TextBottomB {
+	padding-left: 5px;
+}
+
+#issue .issueContent a:hover {
+	text-decoration: none;
+}

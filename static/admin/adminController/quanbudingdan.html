@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/ch-ui.admin.css">
+		<link rel="stylesheet" href="../css/font/css/font-awesome.min.css">
+		<script type="text/javascript" src="../../lib/jqurey/jquery.js"></script>
+		<script type="text/javascript" src="../css/js/ch-ui.admin.js"></script>
+		<script type="text/javascript" src="../js/adminMain.js"></script>
+	</head>
+	<body>
+		<!--面包屑导航 开始-->
+	    <div class="crumb_warp">
+	        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
+	        <i class="fa fa-home"></i>  <a href="#">首页</a> &raquo; <a href="#">社群运营</a> &raquo; 全部订单
+	    </div>
+	    <!--全部订单 查询模块-->
+	    <div>
+			<div style="float: left; padding-top: 10px;">
+				<input type="button" value="导出记录" class="fa fa-plus"  style="width: 80px; padding-left: 10px;margin-left: 50px;"/>
+				<input type="button" value="导出订单" class="fa fa-plus"  style="width: 80px; padding-left: 10px;margin-left: 50px;"/>
+			</div>
+			<div style="float: right;padding-top: 10px;">
+		        <form action="" method="post">
+		        	<div>
+		        		<select onchange="javascript:location.href=this.value;" >
+                            <option value="">全部</option>
+                            <option value="1">已上架</option>
+                            <option value="0">未上架</option>
+		                </select>
+		                <select onchange="javascript:location.href=this.value;" >
+                            <option value="">订单类型</option>
+                            <option value="0">普通订单</option>
+                            <option value="1">买赠订单</option>
+                            <option value="2">续费订单</option>
+		                </select>
+		                <select onchange="javascript:location.href=this.value;" >
+                            <option value="">分销情况</option>
+                            <option value="0">参与分销</option>
+                            <option value="1">不参与分销</option>
+		                </select>
+		                <select onchange="javascript:location.href=this.value;" >
+                            <option value="">昵称</option>
+                            <option value="0">商品名称</option>
+		                </select>
+		                <span>关键字:</span>
+		                <input type="text" name="keywords" placeholder="关键字">
+		                <input type="submit" name="sub" value="查询">
+		        	</div>
+		        </form>
+	    	</div>
+		</div>
+		<div id="allDazhu" class="result_wrap" style="display: block;">
+            <div class="result_content">
+                <table class="list_tab">
+                    <tr>
+                        <th>头像/昵称</th>
+                        <th>订单类型</th>
+                        <th>商品类型</th>
+                        <th>商品名称</th>
+                        <th>订单金额</th>
+                        <th>参与分销</th>
+                        <th>订单状态</th>
+                        <th>订单时间</th>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 40px;height: 40px;"/>
+                    		</div>
+                    	</td>
+                        <td>普通订单</td>
+                        <td>音频</td>
+                        <td>11</td>
+                        <td>0.01</td>
+                        <td>不参与<</td>
+                        <td>已完成</td>
+                        <td>2017-12-22</td>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 40px;height: 40px;"/>
+                    		</div>
+                    	</td>
+                        <td>普通订单</td>
+                        <td>音频</td>
+                        <td>11</td>
+                        <td>0.01</td>
+                        <td>不参与<</td>
+                        <td>已完成</td>
+                        <td>2017-12-22</td>
+                    </tr>
+                </table>
+				<div class="page_nav">
+					<div>
+					<a class="first" href="/wysls/index.php/Admin/Tag/index/p/1.html">第一页</a> 
+					<a class="prev" href="/wysls/index.php/Admin/Tag/index/p/7.html">上一页</a> 
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/6.html">6</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/7.html">7</a>
+					<span class="current">8</span>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/9.html">9</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/10.html">10</a> 
+					<a class="next" href="/wysls/index.php/Admin/Tag/index/p/9.html">下一页</a> 
+					<a class="end" href="/wysls/index.php/Admin/Tag/index/p/11.html">最后一页</a> 
+					<span class="rows">11 条记录</span>
+					</div>
+				</div>
+            </div>
+        </div>
+	</body>
+</html>

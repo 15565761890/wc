@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/ch-ui.admin.css">
+		<link rel="stylesheet" href="../css/font/css/font-awesome.min.css">
+		<script type="text/javascript" src="../../lib/jqurey/jquery.js"></script>
+		<script type="text/javascript" src="../css/js/ch-ui.admin.js"></script>
+		<script type="text/javascript" src="../js/adminMain.js"></script>
+	    
+		<title></title>
+		<style type="text/css">
+			.mingshiwenda {
+				height: 160px;
+    			margin: 20px 20px 10px;
+    			background-color: #f6f8fa;
+    			border: solid 1px #efefef;
+   				position: relative;
+			}
+			.mswdImg {
+				width: 160px;
+			    height: 120px;
+			    margin: 20px;
+			    float: left;
+			}
+			.mswdOperate {
+				position: absolute;
+			    top: 20px;
+			    right: 20px;
+			}
+			.mswdOperate ul li {
+				float: left;
+			}
+			.dazhu ul li {
+				float: left;
+				width: 140px;
+			}
+			.daAll {
+				margin-top: 40px;
+				background-color: #f6f8fa;
+			}
+			#dumpEWM {
+				display: none; 
+	            position: absolute; 
+	            top: 25%; 
+	            left: 40%; 
+	            width: auto; 
+	            height: auto; 
+	            padding: 20px; 
+	            background-color: white; 
+	            z-index:1002; 
+	            overflow: auto; 
+			}
+		</style>
+		<script type="text/javascript">
+			function showDazhu(){
+				//配置颜色
+				document.getElementById('allDazhuLi').style.color="royalblue";
+				document.getElementById('allQuestionLi').style.color="black";
+				document.getElementById('gongnengpeizhiLi').style.color="black";
+				
+				document.getElementById('allQuestion').style.display= "none";
+				document.getElementById('daAll').style.display="block";
+				document.getElementById('allDazhu').style.display="block";
+				document.getElementById('gongnengpeizhi').style.display="none";
+			}
+			function showAllQuestion(){
+				//配置颜色
+				document.getElementById('allDazhuLi').style.color="black";
+				document.getElementById('allQuestionLi').style.color="royalblue";
+				document.getElementById('gongnengpeizhiLi').style.color="black";
+				
+				document.getElementById('allQuestion').style.display= "block";
+				document.getElementById('daAll').style.display="block";
+				document.getElementById('allDazhu').style.display="none";
+				document.getElementById('gongnengpeizhi').style.display="none";
+			}
+			function showGongnengpeizhi(){
+				//配置颜色
+				document.getElementById('allDazhuLi').style.color="black";
+				document.getElementById('allQuestionLi').style.color="black";
+				document.getElementById('gongnengpeizhiLi').style.color="royalblue";
+				
+				document.getElementById('allQuestion').style.display= "none";
+				document.getElementById('daAll').style.display="none";
+				document.getElementById('allDazhu').style.display="none";
+				document.getElementById('gongnengpeizhi').style.display="block";
+			}
+			function showEWM() {
+				document.getElementById("dumpEWM").style.display="block";
+			}
+		</script>
+	</head>
+	<body>
+		<!--面包屑导航 开始-->
+	    <div class="crumb_warp">
+	        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
+	        <i class="fa fa-home"></i>  <a href="#">首页</a> &raquo; <a href="#">社群运营</a> &raquo; 付费问答
+	    </div>
+	    <!--面包屑导航 结束-->
+	    <!--名师问答-->
+		<div class="mingshiwenda">
+			<div class="mswdImg"><img src="../img/mswd.png" style="height: 100%; width: 100%;"></div>
+			<div class="mswdInfo">
+				<div style="margin-top: 30px;">汇聚电商界名师大咖</div>
+				<div style="height: 30px; line-height: 30px;">有问题，来这儿~</div>
+				<div style=" margin-top: 20px; color: red;">偷听价格：1元</div>
+				<div >偷听分成：   商家 0.30元  答主 0.50元  提问者 0.20元</div>
+			</div>
+			<div class="mswdOperate">
+				<ul>
+					<li onclick="alert('复制链接')">复制链接&nbsp;&nbsp;</li>
+					<li>编辑&nbsp;&nbsp;</li>
+					<li>下架</li>
+				</ul>
+			</div>
+		</div>
+		<!--名师问答下面的答主操作-->
+		<div class="dazhu">
+			<ul>
+				<li id="allDazhuLi" style="margin-left: 60px; color: royalblue;" onclick="showDazhu()">全部答主</li>
+				<li id="allQuestionLi" onclick="showAllQuestion()">全部问题</li>
+				<li id="gongnengpeizhiLi" onclick="showGongnengpeizhi()">功能配置</li>
+			</ul>
+		</div>
+		<div id="daAll" class="daAll">
+			<div style="float: left; padding-top: 10px;">
+				<input type="button" value="邀请答主" class="fa fa-plus" onclick="showEWM()" style="width: 80px; padding-left: 10px;margin-left: 50px;"/>
+			</div>
+			<div style="float: right;padding-top: 10px;">
+		        <form action="" method="post">
+		        	<div>
+		        		<select onchange="javascript:location.href=this.value;" >
+                            <option value="">全部</option>
+                            <option value="1">已上架</option>
+                            <option value="0">未上架</option>
+		                </select>
+		                <span>关键字:</span>
+		                <input type="text" name="keywords" placeholder="关键字">
+		                <input type="submit" name="sub" value="查询">
+		        	</div>
+		        </form>
+	    	</div>
+		</div>
+		<!--全部答主--><!--result_wrap  result_content -->
+		<div id="allDazhu" class="result_wrap" style="display: block;">
+            <div class="result_content">
+                <table class="list_tab">
+                    <tr>
+                        <th>头像</th>
+                        <th>姓名</th>
+                        <th>职位/头衔</th>
+                        <th>手机号</th>
+                        <th>提问价格</th>
+                        <th>提问分成</th>
+                        <th>总回答</th>
+                        <th>今日回答</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 40px;height: 40px;"/>
+                    		</div>
+                    	</td>
+                        <td>jym</td>
+                        <td>淘宝男神</td>
+                        <td>15565761890</td>
+                        <td>1元/次</td>
+                        <td>0.01元/次<</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>
+                            <a href="#">设置</a>
+                            <a href="#">下线</a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 40px;height: 40px;"/>
+                    		</div>
+                    	</td>
+                        <td>jym</td>
+                        <td>淘宝男神</td>
+                        <td>15565761890</td>
+                        <td>1元/次</td>
+                        <td>0.01元/次<</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>
+                            <a href="#">设置</a>
+                            <a href="#">下线</a>
+                        </td>
+                    </tr>
+                </table>
+				<div class="page_nav">
+					<div>
+					<a class="first" href="/wysls/index.php/Admin/Tag/index/p/1.html">第一页</a> 
+					<a class="prev" href="/wysls/index.php/Admin/Tag/index/p/7.html">上一页</a> 
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/6.html">6</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/7.html">7</a>
+					<span class="current">8</span>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/9.html">9</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/10.html">10</a> 
+					<a class="next" href="/wysls/index.php/Admin/Tag/index/p/9.html">下一页</a> 
+					<a class="end" href="/wysls/index.php/Admin/Tag/index/p/11.html">最后一页</a> 
+					<span class="rows">11 条记录</span>
+					</div>
+				</div>
+            </div>
+        </div>
+		
+			
+		<!--全部问题-->
+		<div id="allQuestion" class="result_wrap" style="display: none;">
+            <div class="result_content">
+                <table class="list_tab">
+                    <tr>
+                        <th>问题详情：</th>
+                        <th>提问者</th>
+                        <th>提问时间</th>
+                        <th>问答者</th>
+                        <th>回答时间</th>
+                        <th>偷听者（人数）</th>
+                        <th>今日偷听</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr>
+                    	<td>这个淘宝直通车怎么做的？</td>
+                    	<td>致远</td>
+                    	<td>2017-11-13 20:48:10</td>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 30px;height: 30px;"/>&nbsp;&nbsp;&nbsp;jym
+                    		</div>
+                    	</td>
+                    	<td>2017-11-14 20:48:10</td>
+                    	<td>12</td>
+                    	<td>1</td>
+                    	<td>已回答</td>
+                    	<td>
+                    		<div>
+                    			<input type="button" value="查看" style="padding-left: 0.3rem; width: 2.6rem;"/>
+                    			<input type="button" value="隐藏" style="padding-left: 0.3rem; width: 2.6rem;"/>
+                    		</div>
+                    	</td>
+                    </tr>
+                    <tr>
+                    	<td>这个淘宝直通车怎么做的？</td>
+                    	<td>致远</td>
+                    	<td>2017-11-13 20:48:10</td>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 40px;height: 40px;"/>&nbsp;&nbsp;&nbsp;jym
+                    		</div>
+                    	</td>
+                    	<td>2017-11-14 20:48:10</td>
+                    	<td>12</td>
+                    	<td>1</td>
+                    	<td>已回答</td>
+                    	<td>
+                    		<div>
+                    			<input type="button" value="查看" style="padding-left: 0.3rem; width: 2.6rem;"/>
+                    			<input type="button" value="隐藏" style="padding-left: 0.3rem; width: 2.6rem;"/>
+                    		</div>
+                    	</td>
+                    </tr>
+                </table>
+				<div class="page_nav">
+					<div>
+					<a class="first" href="/wysls/index.php/Admin/Tag/index/p/1.html">第一页</a> 
+					<a class="prev" href="/wysls/index.php/Admin/Tag/index/p/7.html">上一页</a> 
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/6.html">6</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/7.html">7</a>
+					<span class="current">8</span>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/9.html">9</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/10.html">10</a> 
+					<a class="next" href="/wysls/index.php/Admin/Tag/index/p/9.html">下一页</a> 
+					<a class="end" href="/wysls/index.php/Admin/Tag/index/p/11.html">最后一页</a> 
+					<span class="rows">11 条记录</span>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!--全部功能配置-->
+		<div id="gongnengpeizhi" style="display: none;">
+			<div><br /><br /><br />
+				<span style="margin-left: 60px;">偷听人数显示：</span>
+				<input type="button" name="ttshow" value="显示" />
+				<input type="button" name="ttshow" value="不显示" />
+			</div>
+			<br />
+			<div>
+				<span style="margin-left: 60px;">服务号通知设置：</span>
+				<input type="button" name="ttshow" value="开启" />（建议开启。当天有用户提问，答主会在20：00收到模板消息通知；用户提问被回答，该用户会收到模板消息通知）
+				<br/><input type="button" name="ttshow" value="关闭" style="margin-left: 175px;margin-top: 10px;"/>（关闭后，用户/答主只能收到系统小纸条，可能会错过回答时间噢。）
+			</div>
+		</div>
+		<div id="dumpEWM" >
+			<div><img src="../img/close.png" style="width: 14px;height: 14px;float: right;" onclick='document.getElementById("dumpEWM").style.display="none";'/></div>
+			<div>&nbsp;&nbsp;微信扫一扫分享链接或<br/>者复制链接邀请好友成为答主</div>
+			<img src="../img/erwema.png" /><br />
+			<a style="margin-left: 50px;">复制邀请链接</a>
+		</div>
+	</body>
+</html>

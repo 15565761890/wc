@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public_index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/answer.css" />
+		<title></title>
+		<script src="../lib/jqurey/jquery.min.js"></script>
+		<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				/*底部导航*/
+				var answer = $('#answer .container .tip');
+				var aList = answer.children('a').children('span');
+				/*console.log(aList);*/
+				
+				aList.on('click', function() {
+
+					
+					aList.removeClass('actived');
+					$(this).addClass('actived');
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<section id="answer">
+			<div class="container">
+				<div class="tip nav nav-tabs">
+					<a href="#home" aria-controls="home" role="tab" data-toggle="tab"><span class="answerLeft actived">答主</span></a>
+					<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><span class="answerRight">问题</span></a>
+				</div>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="home">
+						<div id="answer1">
+							<a href="#">
+								<div class="answerContent clearfix">
+									<div class="answerContentImg"><img src="../img/12.jpg" /></div>
+									<div class="answerContentText">
+										<h5>名字</h5>
+										<p>擅长方向：直通车、团队管理</p>
+										<p>5条回答</p>
+									</div>
+									<div class="answerContentValue">
+										<span>￥48提问</span>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="profile">
+						<div id="issue">
+							<div class="issueContent">
+								<a href="#">
+									<div class="issueContentOne">
+										<p>ad比较哈撒给大家好哇广东一股GV按设计的变更计划多撒鸡年大按设计的变更计划多撒鸡年大按设计的变更计划多撒鸡年大吉开始你都看股GV按设计的变更计划多撒鸡股GV按设计的变更计划多撒鸡年大</p>
+										<div class="issueBox clearfix">
+											<div class="issueBoxImg">
+												<img src="../img/12.jpg" />
+											</div>
+											<div class="issueBoxText"><i class="glyphicon glyphicon-signal voice"></i><span>1元偷偷听</span><i class="timeI">47s</i></div>
+											<div class="issueBoxRight">
+												<span>11人听过</span>
+											</div>
+										</div>
+										<h5>名字</h5>
+										<div class="TextBottom clearfix"><span class="TextBottomA">4条回答</span><span class="TextBottomB">擅长方向：淘宝达人</span></div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

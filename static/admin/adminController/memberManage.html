@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/ch-ui.admin.css">
+		<link rel="stylesheet" href="../css/font/css/font-awesome.min.css">
+		<script type="text/javascript" src="../../lib/jqurey/jquery.js"></script>
+		<script type="text/javascript" src="../css/js/ch-ui.admin.js"></script>
+		<script type="text/javascript" src="../js/adminMain.js"></script>
+	    <style>
+	    	.choiceOperate ul li {
+	    		float: left;
+	    		width: 140px;
+	    	}
+	    	.choiceOperate {
+	    		height: 30px;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<!--面包屑导航 开始-->
+	    <div class="crumb_warp">
+	        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
+	        <i class="fa fa-home"></i>  <a href="#">首页</a> &raquo; <a href="#">社群运营</a> &raquo; 用户管理
+	    </div>
+	    <!--面包屑导航 结束-->
+	    <!--用户管理选择操作-->
+		<div class="choiceOperate" >
+			<ul>
+				<li style="margin-left: 10%;"><strong>访问用户</strong></li>
+				<li><strong>开通记录</strong></li>
+				<li><strong>消息列表</strong></li>
+				<li><strong>反馈列表</strong></li>
+			</ul>
+		</div>
+		<!--查询框-->
+		<div>
+			<div style="float: right;margin-top: 15px;">
+				<span><strong>人数：62</strong></span>
+		        <form action="" method="post">
+		        	<div>
+		        		<select onchange="javascript:location.href=this.value;" >
+	                        <option value="">全部</option>
+	                        <option value="1">已上架</option>
+	                        <option value="0">未上架</option>
+		                </select>
+		                <span>关键字:</span>
+		                <input type="text" name="keywords" placeholder="关键字">
+		                <input type="submit" name="sub" value="查询">
+		        	</div>
+		        </form>
+	    	</div>
+    	</div>
+		<!--用户列表-->
+		<div id="allDazhu" class="result_wrap" style="display: block;">
+            <div class="result_content">
+                <table class="list_tab">
+                    <tr>
+                        <th>头像</th>
+                        <th>姓名</th>
+                        <th>职位/头衔</th>
+                        <th>手机号</th>
+                        <th>提问价格</th>
+                        <th>提问分成</th>
+                        <th>总回答</th>
+                        <th>今日回答</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 40px;height: 40px;"/>
+                    		</div>
+                    	</td>
+                        <td>jym</td>
+                        <td>淘宝男神</td>
+                        <td>15565761890</td>
+                        <td>1元/次</td>
+                        <td>0.01元/次<</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>
+                            <a href="#">设置</a>
+                            <a href="#">下线</a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<div>
+                    			<img src="../img/dazhu.png" style="width: 40px;height: 40px;"/>
+                    		</div>
+                    	</td>
+                        <td>jym</td>
+                        <td>淘宝男神</td>
+                        <td>15565761890</td>
+                        <td>1元/次</td>
+                        <td>0.01元/次<</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>
+                            <a href="#">设置</a>
+                            <a href="#">下线</a>
+                        </td>
+                    </tr>
+                </table>
+				<div class="page_nav">
+					<div>
+					<a class="first" href="/wysls/index.php/Admin/Tag/index/p/1.html">第一页</a> 
+					<a class="prev" href="/wysls/index.php/Admin/Tag/index/p/7.html">上一页</a> 
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/6.html">6</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/7.html">7</a>
+					<span class="current">8</span>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/9.html">9</a>
+					<a class="num" href="/wysls/index.php/Admin/Tag/index/p/10.html">10</a> 
+					<a class="next" href="/wysls/index.php/Admin/Tag/index/p/9.html">下一页</a> 
+					<a class="end" href="/wysls/index.php/Admin/Tag/index/p/11.html">最后一页</a> 
+					<span class="rows">11 条记录</span>
+					</div>
+				</div>
+            </div>
+        </div>
+		
+	</body>
+</html>

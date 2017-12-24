@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <title></title>
+        <script src="js/control/config.js"></script>
+        <script src="lib/jqurey/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="MyDiv"></div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function () {
+            $.ajax({
+                url: serverApi + 'getInviteCode',
+                type: 'GET',
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    if (data.success == 1) {
+                        var listNews = data.data;
+                        alert(listNews);
+                    } else {
+                        alert(data.error);
+                    }
+                },
+                error: function (data) {
+                    alert("服务器未响应，请联系客服。");
+                }
+            });
+        }
+    </script>
+</html>

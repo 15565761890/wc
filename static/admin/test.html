@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<html> 
+    <head> 
+    	<meta charset="utf-8" />
+        <title>点击文字弹出一个DIV层窗口代码</title> 
+        <link href="js/jtable.2.4.0/themes/jqueryui/jtable_jqueryui.css" rel="stylesheet" />
+        <link href="js/jtable.2.4.0/themes/metro/blue/jtable.css" rel="stylesheet" />
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
+        <script type="text/javascript" src="js/jtable.2.4.0/jquery.jtable.js"></script>
+        <script type="text/javascript" src="js/jtable.2.4.0/external/json2.js"></script>
+        
+    </head> 
+    <body> 
+        <div id="testDiv"></div>
+        <script>
+        	var isAddressSearch = false;
+        	getStaffarchivesTable();
+        	function getStaffarchivesTable() {
+    var Authorization = "d921f1b4f40bc6bf9c047942156cfd74";
+    var code1 = "100";
+    var password = "123456";
+    if (Authorization == undefined || code1 == undefined || password == undefined) {
+        alert("用户信息验证失败");
+        return;
+    }
+    $('#testDiv').jtable({
+        title: '职场评价管理',
+        paging: true,
+        pageSize: 10,
+        sorting: true,
+        selecting: true,
+        defaultSorting: 'name ASC',
+        actions: {
+            listAction: function (postData, jtParams) {
+                return $.Deferred(function ($dfd) {
+                    if (!isAddressSearch) {
+                        $.ajax({
+                            url: "http://47.92.152.14:3389/" + 'allStaffArchives',
+                            type: 'GET',
+                            dataType: "json",
+                            headers: { "Authorization": "Basic " + Authorization + ":" + password, "code": code1, "startIndex": jtParams.jtStartIndex, "pageSize": jtParams.jtPageSize, "sorting": jtParams.jtSorting },
+                            data: {},
+                            success: function (data) {
+                                if (data.success == 1) {
+                                    if (data.data.length < 1)
+                                        return;
+                                    var startIndex = jtParams.jtStartIndex;
+                                    var pageSize = jtParams.jtPageSize;
+                                    var items = [];
+                                    for (var i = 0; i < pageSize; i++) {
+                                        if (data.data[startIndex + i] == undefined)
+                                            break;
+                                        items.push(data.data[startIndex + i]);
+                                    }
+                                    var jsonObj = {
+                                        "Result": "OK",
+                                        "Records": data.data,
+                                        "TotalRecordCount": data.count["FOUND_ROWS()"]
+                                    }
+                                    $dfd.resolve(jsonObj);
+                                }
+                                else {
+                                    var jsonObj = {
+                                        "Result": "ERROR",
+                                        "Message": data.error
+                                    }
+                                    $dfd.resolve(jsonObj);
+                                }
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            }
+                        });
+                    }
+                    else {
+                        var companyName = document.getElementById('companyName').value;
+                        var name = document.getElementById('name').value;
+                        var idCard = document.getElementById('idCard').value;
+                        $.ajax({
+                            url: "http://47.92.152.14:3389/" + 'staffArchives?name=' + name + '&companyName=' + companyName + '&idCard=' + idCard,
+                            type: 'GET',
+                            dataType: "json",
+                            headers: { "Authorization": "Basic " + Authorization + ":" + password, "code": code1, "startIndex": jtParams.jtStartIndex, "pageSize": jtParams.jtPageSize, "sorting": jtParams.jtSorting }, data: {},
+                            success: function (data) {
+                                if (data.success == 1) {
+                                    if (data.data.length < 1)
+                                        return;
+                                    var startIndex = jtParams.jtStartIndex;
+                                    var pageSize = jtParams.jtPageSize;
+                                    var items = [];
+                                    for (var i = 0; i < pageSize; i++) {
+                                        if (data.data[startIndex + i] == undefined)
+                                            break;
+                                        items.push(data.data[startIndex + i]);
+                                    }
+                                    var jsonObj = {
+                                        "Result": "OK",
+                                        "Records": data.data,
+                                        "TotalRecordCount": data.count.count
+                                    }
+                                    $dfd.resolve(jsonObj);
+                                }
+                                else {
+                                    var jsonObj = {
+                                        "Result": "ERROR",
+                                        "Message": data.error
+                                    }
+                                    $dfd.resolve(jsonObj);
+                                }
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            }
+                        });
+                    }
+                });
+            },
+            deleteAction: function (postData) {
+                var query = { "id": postData.id };
+                var strData = JSON.stringify(query);
+                return $.Deferred(function ($dfd) {
+                    $.ajax({
+                        url: restApiServer + 'staffArchives',
+                        type: 'DELETE',
+                        dataType: "json",
+                        headers: { "Authorization": "Basic " + Authorization + ":" + password, "code": code1 },
+                        data: strData,
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            if (data.success == 1) {
+                                var jsonObj = {
+                                    "Result": "OK"
+                                }
+                                $dfd.resolve(jsonObj);
+                                data = null;
+                            }
+                            else {
+                                var jsonObj = {
+                                    "Result": "ERROR",
+                                    "Message": data.error
+                                }
+                                console.log("Message");
+                                $dfd.resolve(jsonObj);
+                            }
+                        },
+                        error: function () {
+                            $dfd.reject();
+                        }
+                    });
+                });
+            }
+        },
+        fields: {
+            id: {
+                title: 'ID',
+                width: '30px',
+                key: true,
+                create: false,
+                list: false,
+                edit: true
+            },
+            name: {
+                title: '姓名',
+                width: '50px'
+            },
+            idCard: {
+                title: '身份证',
+                width: '100px'
+            },
+            companyName: {
+                title: '公司名称',
+                width: '80px'
+            },
+            startDate: {
+                title: '入职时间',
+                width: '100px'
+            },
+            endDate: {
+                title: '离职时间',
+                width: '100px'
+            },
+            assess: {
+                title: '总体评价',
+                width: '100px',
+                options: { '0': '优秀', '1': '较好', '2': '一般', '3': '较差' }
+            },
+            description: {
+                title: '详细描述',
+                width: '120px'
+            },
+            active: {
+                title: '状态',
+                width: '50px',
+                options: { '0': '未审核', '1': '已审核' }
+            },
+            evidenceImageUrl: {
+                title: '评价证据',
+                width: '120px',
+                display: function (data) {
+                    if (data.record)
+                        return '<a href="' + document.origin + '/' + data.record.evidenceImageUrl + '" target="view_window">' + data.record.evidenceImageUrl + '</a>';
+                }
+            },
+            updateDate: {
+                title: '修改日期',
+                width: '80px'
+            },
+            createDate: {
+                title: '创建日期',
+                width: '80px'
+            }
+        }
+    });
+    $('#testDiv').jtable('load');
+}
+        </script>
+    </body> 
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/public_index.css" />
+		<link rel="stylesheet" href="css/contentView.css" />
+		<script src="lib/jqurey/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.anniu').click(function() {
+					$('.contentIntro').toggle(1000, function() {
+						if($('.anniu span').hasClass("glyphicon glyphicon-chevron-up")) {
+							$('.anniu span').removeClass().addClass('glyphicon glyphicon-chevron-down');
+						} else {
+							$('.anniu span').removeClass().addClass('glyphicon glyphicon-chevron-up');
+						}
+					})
+
+				})
+
+			})
+		</script>
+	</head>
+
+	<body>
+		<section id="contentView">
+			<div class="container">
+				<div class="video-wrap">
+					<!--style="display: none;"-->
+					<video src="" width="480px" height="240px" controls="controls">
+					</video>
+					<img src="img/18.jpg">
+				</div>
+				<div class="content-box">
+
+					<div class="clearfix">
+						<div class="content-boxH clearfix"> <span class="content-boxH-Left">课堂作业</span><span class="content-boxH-right">查看作业></span> </div>
+						<div class="contentTitle clearfix">
+							<div class="contentImg">
+								<img src="img/19.jpg" />
+							</div>
+							<div class="contentText">
+								<h6>2017双11中小卖家突围之战</h6>
+								<div class="contentTextSpan"><span class="contentTextSpanLeft">已更新28期</span><span class="contentTextSpanRight">765人订阅</span></div>
+							</div>
+							<div class="contentRight">
+								<span>订阅专栏</span>
+							</div>
+						</div>
+						<div class="contentNav">
+							<div class="contentNavH">
+								<h4>多撒大所大所多多撒大所多佛挡杀佛大所多多撒大所大所多多撒大所</h4>
+							</div>
+							<div class="clearfix detailHeadNum">
+								<i class="glyphicon glyphicon-play-circle"></i><span class="detailHeadNumLeft">3222</span><i class="glyphicon glyphicon-comment"></i><span class="detailHeadNumRight">4</span>
+							</div>
+							<div class="contentTime"> 2017-05-16 17:05:33 </div>
+						</div>
+						<div class="desc">
+							<div class="contentIntro">
+								<p style="white-space: normal;">&nbsp;</p>
+								<p style="white-space: normal; text-align: center;">【订阅提示】</p>
+								<p style="white-space: normal; text-align: center;">点击上方“<span style="color: rgb(51, 51, 51); font-family: 'PingFang SC', 'Lantinghei SC', 'Microsoft YaHei', arial, 宋体, sans-serif, tahoma; font-size: 14px; line-height: 24px; background-color: rgb(255, 255, 255);">&nbsp;►</span>”即可播放课程内容</p>
+								<p style="white-space: normal;"><br></p>
+								<p style="white-space: normal; text-align: center;"><br></p>
+								<p style="white-space: normal; text-align: center;">如果喜欢白云老师，</p>
+								<p style="white-space: normal; text-align: center;">钻展<span style="color: rgb(64, 72, 88); font-family: 'Microsoft Yahei', Helvetica, arial, sans-serif;"><span style="background-color: rgb(255, 255, 255);">课程</span></span>
+								</p>
+								<p style="white-space: normal; text-align: center;">▼点击查看他【专栏课程】的课程简介</p>
+								<p style="white-space: normal;"><br></p>
+								<p style="white-space: normal; text-align: center;">10节实操的视频课程</p>
+								<p style="white-space: normal; text-align: center;">更新的后续课程</p>
+								<p style="white-space: normal; text-align: center;">&nbsp;讲师答疑群&nbsp;</p>
+								<p style="white-space: normal;"><br></p>
+								<p style="white-space: normal; text-align: center;"><span style="color: rgb(84, 141, 212);">戳此☞打开：</span>
+									<a href="#">系统学习钻展，把钱花在刀刃上</span>
+									</a>
+								</p>
+								<p>
+									<a href="#"></a>
+								</p>
+							</div>
+							<div class="anniu">
+								<span class="glyphicon glyphicon-chevron-up"></span>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+				<footer id="commentFooter" class="container">
+					<div class="boxFooter">
+						<div class="textInput" contenteditable=true></div>
+						<div class="shareButton">请好友听</div>
+					</div>
+				</footer>
+			</div>
+
+			<div class="comment">
+				<div class="commentTile clearfix">
+					<span class="commentTileLeft">评论(4)</span>
+					<span class="commentTileRight1">最新</span>
+					<span class="commentTileRight2">热门</span>
+				</div>
+				<div class="commentContent clearfix container">
+					<div class="commentContentImg">
+						<img src="img/12.jpg" />
+					</div>
+					<div class="commentContentText">
+						<h5>sunny</h5>
+						<p>11111111</p>
+						<span>2017-01-05</span>
+					</div>
+					<div class="commentContentRight">
+						<span class="glyphicon glyphicon-thumbs-up"></span>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</body>
+
+</html>

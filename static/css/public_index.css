@@ -1,0 +1,131 @@
+/*公共样式*/
+
+.clearfix::before,
+.clearfix::after {
+	content: ' ';
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.body-container{
+	height: 100%;
+}
+.body-container,
+.container {
+	width: 100%;
+	max-width: 480px;
+	margin: auto;
+	background-color: #FFFFFF;
+	position: relative;
+	
+}
+
+html,body {
+	background-color: #69696B;
+	height: 100%; 
+}
+
+
+/*内容*/
+
+#content .container .content-header {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+#content .container .content-header a>span {
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+#content .container .content-header a>span>i {
+	font-size: 10px;
+}
+
+#content .container .content-content {
+	overflow: hidden;
+	margin-top: 10px;
+	border-bottom: 1px solid #E3E3E3;
+}
+
+#content .container .content-content .content-img {
+	width: 30%;
+	height: 80px;
+	float: left;
+	border-radius: 2px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+#content .container .content-content .content-img img {
+	width: 100%;
+	height: 100%;
+}
+
+#content .container .content-content .content-text {
+	width: 70%;
+	float: left;
+	height: 80px;
+	padding-left: 10px;
+	overflow: hidden;
+	color: #000000;
+}
+
+#content .container .content-content .content-text h4 {
+	font-size: 14px;
+}
+
+#content .container .content-content .content-text p {
+	display: block;
+	word-break: keep-all;
+	/* 不换行 */
+	white-space: nowrap;
+	/* 不换行 */
+	overflow: hidden;
+	/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow: ellipsis;
+	/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	font-size: 12px;
+	color: #CCCCCC;
+	
+}
+#content .container .content-content .content-text p.neirong span{
+	float: right;
+}
+#content .container .content-content .content-text .total {
+	float: left;
+	padding-right: 5px;
+	border-right: 1px solid #CCCCCC;
+}
+
+#content .container .content-content .content-text .number {
+	float: left;
+	margin-left: 5px;
+}
+
+#content .container .content-content .content-text .price {
+	float: right;
+	color: red;
+}
+#content .container .content-content .content-text .viewP{
+	float: left;
+}
+#content .container .content-content .content-text .viewP .viewP-1{
+	margin-left: 5px;
+}
+#content .container .content-content .content-text .viewP1{
+	float: left;
+	margin-left: 12px;
+}
+#content .container .content-content .content-text .viewP1 .viewP-1{
+	margin-left: 5px;
+}
+#content .container .content-content .content-text .timeP{
+	float: right;
+}

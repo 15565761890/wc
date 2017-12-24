@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/ch-ui.admin.css">
+		<link rel="stylesheet" href="../css/font/css/font-awesome.min.css">
+		<script type="text/javascript" src="../../lib/jqurey/jquery.js"></script>
+		<script type="text/javascript" src="../css/js/ch-ui.admin.js"></script>
+		<script type="text/javascript" src="../js/adminMain.js"></script>
+	    <style>
+	    	.choicModle ul li {
+	    		float: left;
+				width: 140px;
+	    	}
+	    	.choicModle ul {
+	    		height: 40px;
+    			padding-top: 10px;
+	    	}
+	    	.incomeData ul li {
+	    		float: left;
+	    		width: 18%;
+	    	}
+	    </style>
+	    <script type="text/javascript">
+	    	function showGRDiv() {
+	    		document.getElementById('gerenDiv').style.display = "block";
+	    		document.getElementById('geren').style.color = "royalblue";
+	    		document.getElementById('tixianDiv').style.display = "none";
+	    		document.getElementById('tixian').style.color = "black";
+	    		
+	    	}
+	    	function showTXDiv() {
+	    		document.getElementById('gerenDiv').style.display = "none";
+	    		document.getElementById('geren').style.color = "black";
+	    		document.getElementById('tixianDiv').style.display = "block";
+	    		document.getElementById('tixian').style.color = "royalblue";
+	    	}
+	    </script>
+	</head>
+	<body>
+		<!--面包屑导航 开始-->
+	    <div class="crumb_warp">
+	        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
+	        <i class="fa fa-home"></i>  <a href="#">首页</a> &raquo; <a href="#">社群运营</a> &raquo; 全部订单
+	    </div>
+	    <!--名师问答下面的答主操作-->
+		<div class="choicModle">
+			<ul>
+				<li id="geren" style="margin-left: 60px; color: royalblue;" onclick="showGRDiv()">个人模式收入</li>
+				<li id="tixian" onclick="showTXDiv()">提现记录</li>
+			</ul>
+		</div>
+	    <div id="gerenDiv" class="gerenDiv" style="display: block;">
+			<!--全部订单下面的个人收入的操作-->
+			<div>
+				<div class="incomeData" style="background-color: #f6f8fa; margin-left: 30px; padding: 20px; padding-left: 60px; margin-right: 30px; height: 40px;">
+					<ul>
+						<li style="border-right: 1px solid #21916F;text-align: center;">
+							<span>个人模式总收入 (元)&nbsp;</span>
+							<p>58.02</p>
+						</li>
+						<li style="border-right: 1px solid #21916F;text-align: center;">
+							<span>&nbsp;今日收入 (元)</span>
+							<p>&nbsp; 0.00</p>
+						</li>
+						<li style="border-right: 1px solid #21916F;text-align: center;">
+							<span>&nbsp;待结算(元)</span>
+							<p>&nbsp;0.00</p>
+						</li>
+						<li style="border-right: 1px solid #21916F;text-align: center;">
+							<span>&nbsp;总支出 (元)</span>
+							<p>&nbsp;58.02</p>
+						</li>
+						<li style="text-align: center;">
+							<span>&nbsp;可提现金额 (元)</span>
+							<p>&nbsp;56.56</p>
+						</li>
+					</ul>
+				</div>
+				<!--查询条件  -->
+				<div style="float: right;padding-top: 10px;margin-right: 80px;">
+			        <form action="" method="post">
+			        	<div>
+			        		<select onchange="javascript:location.href=this.value;" >
+		                        <option value="">订单时间</option>
+		                        <option value="1">全部订单</option>
+		                        <option value="0">当月订单</option>
+			                </select>
+			                <input type="submit" name="sub" value="筛选">
+			        	</div>
+			        </form>
+		    	</div>
+		    	<div class="result_wrap" style="display: block;">
+		            <div class="result_content">
+		                <table class="list_tab">
+		                    <tr>
+		                        <th>时间</th>
+		                        <th>商品类型</th>
+		                        <th>商品名称</th>
+		                        <th>收入(元)</th>
+		                        <th>支出(元)</th>
+		                    </tr>
+		                    <tr>
+		                    	<td>2017-11-14 19：16：07</td>
+		                        <td>问答</td>
+		                        <td>付费偷听</td>
+		                        <td>+1.00</td>
+		                        <td>-0.70</td>
+		                    </tr>
+		                    <tr>
+		                    	<td>2017-11-14 19：16：07</td>
+		                        <td>音频</td>
+		                        <td>11</td>
+		                        <td>+1.00</td>
+		                        <td>-0.70</td>
+		                    </tr>
+		                </table>
+						<div class="page_nav">
+							<div>
+							<a class="first" href="/wysls/index.php/Admin/Tag/index/p/1.html">第一页</a> 
+							<a class="prev" href="/wysls/index.php/Admin/Tag/index/p/7.html">上一页</a> 
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/6.html">6</a>
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/7.html">7</a>
+							<span class="current">8</span>
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/9.html">9</a>
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/10.html">10</a> 
+							<a class="next" href="/wysls/index.php/Admin/Tag/index/p/9.html">下一页</a> 
+							<a class="end" href="/wysls/index.php/Admin/Tag/index/p/11.html">最后一页</a> 
+							<span class="rows">11 条记录</span>
+						</div>
+					</div>
+	            </div>
+	        </div>
+		    </div>
+	    </div>
+	    
+			
+		<!--全部订单下面的提现记录操作-->
+		<div id="tixianDiv" class="tixianDiv" style="display: none;">
+			<div style="background-color: #f6f8fa; margin-left: 30px; padding: 20px; padding-left: 60px; margin-right: 30px;">
+				<p><b>可提现余额：</b></p>
+				<span>56.56</span>
+				<input type="button" value="提现" style="float: right;"/>
+			</div>
+			<div style="float: right;padding-top: 10px; margin-right: 30px;">
+		        <form action="" method="post">
+		        	<div>
+		                <select onchange="javascript:location.href=this.value;" >
+                            <option value="">订单</option>
+                            <option value="0">全部订单</option>
+                            <option value="1">本月订单</option>
+		                </select>
+		                <select onchange="javascript:location.href=this.value;" >
+                            <option value="">提现状态</option>
+                            <option value="0">待审核</option>
+                            <option value="1">待打款</option>
+                            <option value="2">提现成功</option>
+                            <option value="3">提现失败</option>
+		                </select>
+		                <input type="submit" name="sub" value="查询">
+		        	</div>
+		        </form>
+	    	</div>
+			<div class="result_wrap">
+		            <div class="result_content">
+		                <table class="list_tab">
+		                    <tr>
+		                        <th>提现时间</th>
+		                        <th>到账的微信号</th>
+		                        <th>金额(元)</th>
+		                        <th>完成时间</th>
+		                        <th>状态</th>
+		                        <th>申请人</th>
+		                    </tr>
+		                    <tr>
+		                    	<td>2017-11-14 19：16：07</td>
+		                        <td>致远</td>
+		                        <td>2017-12-14 19：16：07</td>
+		                        <td>已经到账</td>
+		                        <td>致远</td>
+		                        <td>删除</td>
+		                    </tr>
+		                    <tr>
+		                    	<td>2017-11-14 19：16：07</td>
+		                        <td>致远</td>
+		                        <td>2017-12-14 19：16：07</td>
+		                        <td>已经到账</td>
+		                        <td>致远</td>
+		                        <td>删除</td>
+		                    </tr>
+		                </table>
+						<div class="page_nav">
+							<div>
+							<a class="first" href="/wysls/index.php/Admin/Tag/index/p/1.html">第一页</a> 
+							<a class="prev" href="/wysls/index.php/Admin/Tag/index/p/7.html">上一页</a> 
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/6.html">6</a>
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/7.html">7</a>
+							<span class="current">8</span>
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/9.html">9</a>
+							<a class="num" href="/wysls/index.php/Admin/Tag/index/p/10.html">10</a> 
+							<a class="next" href="/wysls/index.php/Admin/Tag/index/p/9.html">下一页</a> 
+							<a class="end" href="/wysls/index.php/Admin/Tag/index/p/11.html">最后一页</a> 
+							<span class="rows">11 条记录</span>
+						</div>
+					</div>
+	            </div>
+		</div>
+	</body>
+</html>
